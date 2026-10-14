@@ -21,19 +21,19 @@ WebElement searchInput =   driver.findElement(By.name("search"));
 
 
 findElement (s), click, clear, sendKeys, getText
-TASK:
-Isspausdint elemento (id=logo) teksta
-Ivesti i paieskos laukeli "abc"
-paspausti ieskoti (klase = fa-search)
-istrinti paieskos laukelio texta
-Ivesti i paieskos laukeli "iphone"
-paspausti ieskoti (id = button-search)
-Isspausdint krepselio info (id=cart)
-isspausdint kiek prekiu rado (class=product-thumb)
-isspausdint rastos preskes kaina
-atidaryti https://opencart.abstracta.us/index.php?route=account/register
-uzpildyti visus privalomus laukus
-paspausti continue
+TASK (viskas i viena testa):
+1.Isspausdint elemento (id=logo) teksta
+2.Ivesti i paieskos laukeli "abc"
+3.paspausti ieskoti (klase = fa-search)
+4.istrinti paieskos laukelio texta
+5.Ivesti i paieskos laukeli "iphone"
+6.paspausti ieskoti:randam elementa (id = search), poto jam randam button ir ji spaudziam
+7.Isspausdint krepselio info (id=cart)
+8. isspausdint kiek prekiu rado (class=product-thumb)
+9. isspausdint rastos preskes kaina
+10. atidaryti https://opencart.abstracta.us/index.php?route=account/register
+11. uzpildyti visus privalomus laukus
+12. paspausti continue
 
 
 

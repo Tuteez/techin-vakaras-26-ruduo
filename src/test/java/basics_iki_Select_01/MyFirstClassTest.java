@@ -26,6 +26,8 @@ public class MyFirstClassTest {
 //        Isspausdint elemento (id=logo) teksta
         System.out.println(driver.findElement(By.id("logo")).getText());
 
+driver.findElement(By.id("search")).findElement(By.tagName("button")).click();
+        driver.quit();
 
     }
 
