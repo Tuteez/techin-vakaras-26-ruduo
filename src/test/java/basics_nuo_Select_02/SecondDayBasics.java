@@ -78,11 +78,10 @@ public class SecondDayBasics {
     void aa() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://opencart.abstracta.us/index.php?route=account/register");
-String a = "asdasd";
-String b = "asdasd";
+        String a = "asdasd";
+        String b = "asdasd";
 
-a = "new";
-
+        a = "new";
 
 
         driver.quit();
