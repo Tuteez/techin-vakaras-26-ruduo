@@ -1,0 +1,10 @@
+NoSuchElementException vs StaleElementReferenceException
+NoSuchElementException - nerado elemento
+StaleElementReferenceException - neBErado elemento pvz ivyko refresh
+
+
+Select
+Select klase naudojama html elementams kuriu tagName yra select
+Duoda metodu pvz selectByVisibleText
+
+Jei elementas neturi tago select - teks hardcodint
