@@ -1,0 +1,16 @@
+Sintakse [atributas='reiksme']
+atributai: id, class, value, name etc.
+pvz [name='button']
+
+Jei norim, galim nurdodyti taga: input[id='logo']
+arba tik pagal taga: input
+
+Du trumpiniai:
+
+ID (logo):
+trumpai: #logo
+
+KLASE -> .klase (.logo)
+Prdzioje zodzio parase taska ieskom klases,
+o jei # - tada id.
+
