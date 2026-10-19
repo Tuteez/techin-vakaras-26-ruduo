@@ -1,0 +1,16 @@
+Klases paieska:
+//*[@class="btn btn-primary"] - negeras budas, iesko elementto kurio klases butu tiksliai "btn btn-primary"
+//*[contains(@class, 'btn-primary')] - populiariausias budas, ieskos tokio fragmento "btn-primary"
+...bet neidealu nes ras ir pvz "not-a-btn-primary"
+kad to isvengt galima naudot //*[contains(concat(' ',normalize-space(@class),' '),' btn-primary ')]
+... paprasciau css -> .btn-primary
+
+Paieska pagal texta:
+//*[text()='Continue'] - iesko tiklsiai tokio teksto
+//*[contains(text(),'Continu')] - iesko fragmento
+
+Keliavimas dom'u aukstyn:
+/.. pvz //a[contains(.,'Continue')]/.. - randa pirmo elemento teva
+
+Galima ieskoti konkreciai:
+//a[contains(.,'Continue')]/ancestor::*[contains(@class,'well')] - iesko pirmo element, o poto jo senelio su klase well
