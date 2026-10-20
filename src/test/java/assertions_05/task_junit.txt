@@ -1,0 +1,19 @@
+1. open https://opencart.abstracta.us/index.php?route=common/home
+2. Atspausdina pirmos prekes kaina
+    ASSERT: patikrint kaina
+3. keiciam valiuta i eurus (virsuje, kaireje)
+   ASSERT: patikrint kad valiuta pasikeite
+4. Atspausdina pirmos prekes kaina
+    ASSERT: patikrint kaina
+5. Pridedam antra preke i krepseli
+ ASSERT: patikrinam kad prideta
+6. Atspausdinam zalia pranesima kad preke ideta i krepseli
+ ASSERT: patikrinam kad atsairado zalias pranesimas
+7. Uzdarom ta pranesima
+ ASSERT: patikrinam pranesimo nesimato
+8. Idedam Canon EOS 5D i wishlist (spaudziam sirdute)
+ ASSERT: patikrinam kad atsairado zalias pranesimas
+9. pridedam Canon EOS 5D i product comparison
+10. einam i product comparison
+ ASSERT: patikrinam kad prisidejo Canon EOS 5D
+11. Spausdinam product comparison esancios prekes pavadinima

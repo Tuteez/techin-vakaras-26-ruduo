@@ -1,0 +1,9 @@
+//        RegisterTEST
+//        arrange - paruosimas: narsykles atidarimas, navigavimas i register page, testavimo duomenu paruosimas
+//        act - tai ka mes norim patikrint: ar veikia registracija
+//        assert - patikrinimas: tikrinam ar pavyko registracija
+
+assertEquals - stringams arba skaiciams
+galima ir boolean, bet jiem skirti:
+    assertTrue - tikimes true
+    assertFalse - tikimes false
