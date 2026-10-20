@@ -10,28 +10,43 @@ public class xpath {
     @Test
     void onlyCss() {
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        1. open https://opencart.abstracta.us/index.php?route=common/home
         driver.get("https://opencart.abstracta.us/index.php?route=common/home");
-        System.out.println(driver.findElement(By.id("logo")).getText());
-//        driver.findElement(By.name("search")).sendKeys("abc");
-        driver.findElement(By.cssSelector("[name=search]")).sendKeys("abc");
-        driver.findElement(By.className("fa-search")).click();
-        driver.findElement(By.name("search")).clear();
-        driver.findElement(By.name("search")).sendKeys("iphone");
-        driver.findElement(By.id("search")).findElement(By.tagName("button")).click();
-        System.out.println(driver.findElement(By.id("cart")).getText());
-        System.out.println(driver.findElements(By.className("product-thumb")).size());
-        String iphonePrice = driver.findElement(By.className("price")).getText();
-        System.out.println(iphonePrice);
-        driver.get("https://opencart.abstracta.us/index.php?route=account/register");
-        driver.findElement(By.id("input-firstname")).sendKeys("f-name");
-        driver.findElement(By.id("input-lastname")).sendKeys("l-name");
-        driver.findElement(By.id("input-email")).sendKeys("a@a.com");
-        driver.findElement(By.id("input-telephone")).sendKeys("123");
-        driver.findElement(By.id("input-password")).sendKeys("qwqwqw");
-        driver.findElement(By.id("input-confirm")).sendKeys("qwqwqw");
-        driver.findElement(By.name("agree")).click();
-        driver.findElements(By.className("pull-right")).getLast()
-                .findElements(By.tagName("input")).get(1).click();
+//        2. Atspausdina pirmos prekes kaina
+        System.out.println(
+                driver.findElement(By.cssSelector(".price")).getText()
+        );
+//        3. keiciam valiuta i eurus (virsuje, kaireje)
+        driver.findElement(By.xpath("//span[normalize-space()='Currency']")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'€ Euro')]")).click();
+
+//        4. Atspausdina pirmos prekes kaina
+        System.out.println(
+                driver.findElement(By.cssSelector(".price")).getText()
+        );
+//        5. Pridedam antra preke i krepseli
+        driver.findElements(By.xpath("//span[.='Add to Cart']")).get(1).click();
+//        6. Atspausdinam zalia pranesima kad preke ideta i krepseli
+        System.out.println(
+                driver.findElement(By.cssSelector(".alert-success")).getText()
+        );
+        //        7. Uzdarom ta pranesima
+        driver.findElement(By.cssSelector(".close")).click();
+//        8. Idedam Canon EOS 5D i wishlist (spaudziam sirdute)
+        driver.findElement(By.xpath("//a[text()='Canon EOS 5D']" +
+                        "    /ancestor::div[contains(@class,'product-thumb')]" +
+                        "    //button[@data-original-title='Add to Wish List']")).
+                click();
+//        9. pridedam Canon EOS 5D i product comparison
+        driver.findElement(By.xpath("//div[contains(@class,'product-thumb')]" +
+                        "[.//a[contains(text(),'Canon EOS 5D')]]" +
+                        "//button[@data-original-title='Compare this Product']"))
+                .click();
+//        10. einam i product comparison
+        driver.findElement(By.xpath("//a[contains(@href,'product/compare')]")).click();
+//        11. Spausdinam product comparison esancios prekes pavadinima
+        System.out.println(driver.findElement(By.xpath("//td[text()='Product']/following-sibling::td//strong")).getText());
         driver.quit();
     }
 }
