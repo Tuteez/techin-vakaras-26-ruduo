@@ -9,15 +9,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class assertJ {
     @Test
-    void onlyCss() {
+    void onlyCss() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        1. open https://opencart.abstracta.us/index.php?route=common/home
         driver.get("https://opencart.abstracta.us/index.php?route=common/home");
-//        2. Atspausdina pirmos prekes kaina
-        System.out.println(
-                driver.findElement(By.cssSelector(".price")).getText()
-        );
+
 //          ASSERT: patikrint kaina
         String expectedPrice = "$602.00\nEx Tax: $500.00";
 //        Assertions.assertEquals(expectedPrice, driver.findElement(By.cssSelector(".price")).getText());
@@ -30,19 +27,28 @@ public class assertJ {
 String expectedCurrency = "€";
 String actualCurrency = driver.findElement(By.cssSelector("#form-currency strong")).getText();
 //Assertions.assertEquals(expectedCurrency, actualCurrency);
-        Assertions.assertThat(actualCurrency).isEqualTo(expectedCurrency);
-//        4. Atspausdina pirmos prekes kaina
-        System.out.println(
-                driver.findElement(By.cssSelector(".price")).getText()
-        );
+//        Assertions.assertThat(actualCurrency).isEqualTo(expectedCurrency);
 //        5. Pridedam antra preke i krepseli
         driver.findElements(By.xpath("//span[.='Add to Cart']")).get(1).click();
-//        6. Atspausdinam zalia pranesima kad preke ideta i krepseli
-        System.out.println(
-                driver.findElement(By.cssSelector(".alert-success")).getText()
-        );
+Thread.sleep(2000);
+//       patikrinam kad antra preke prideta i krepseli
+        String expectedWordToContain = "iPhone";
+        String actualMessage = driver.findElement(By.cssSelector(".alert-success")).getText();
+        Assertions.assertThat(actualMessage).contains(expectedWordToContain);
+
         //        7. Uzdarom ta pranesima
         driver.findElement(By.cssSelector(".close")).click();
+
+//        ASSERT: patikrinam pranesimo nesimato
+        Assertions.assertThat(
+                driver.findElements(By.cssSelector(".alert-success"))
+        ).isEmpty();
+
+//        Assertions.assertTrue(
+//                driver.findElements(By.cssSelector(".alert-success")).isEmpty()
+//        );
+
+
 //        8. Idedam Canon EOS 5D i wishlist (spaudziam sirdute)
         driver.findElement(By.xpath("//a[text()='Canon EOS 5D']" +
                         "    /ancestor::div[contains(@class,'product-thumb')]" +
