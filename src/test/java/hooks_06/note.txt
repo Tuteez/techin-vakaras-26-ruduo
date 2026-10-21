@@ -1,0 +1,3 @@
+Padaryt klase su trim testais: userCanLogin, userCantLoginWithIncorrectUsername, userCantLoginWithIncorrectPassword
+Pasikartojancia logika perkleti i beforeEach ir afterEach.
+email - your.email+fakedata79434@gmail.com, pass - fc01WsZ77HP2jn6

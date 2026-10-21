@@ -24,7 +24,7 @@ public class aaaTEST {
         driver.manage().window().maximize();
         driver.get("https://opencart.abstracta.us/index.php?route=common/home");
 boolean isLogoDisplayed = driver.findElement(By.xpath("//a[normalize-space()='Your Store']")).isDisplayed();
-//        Assertions.assertEquals(true,true);
+//        Assertions.assertEquals(true,true,"mamsmas");
         Assertions.assertTrue(false);
 
 
