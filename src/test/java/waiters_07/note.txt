@@ -1,0 +1,12 @@
+Implicitly  - ijungiam ir jis veikia visa testa
+Explicitly - kaskart kai reikia kvieciam
+
+Explicitly:
+Waiteriu salygos(conditions) guli klaseje ExpectedConditions (Daugiskaita)
+
+Kai condition praso locator (pvz textToBe) - By.cssSelector("h2") (be driver.find....)
+Kai praso webelement (pvz textToBePresentInElement) - tada driver.findElement(By.cssSelector("h2")).
+
+
+Sukuriam:  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+naudojimas   wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h2[normalize-space()='My Account']")));
