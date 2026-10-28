@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class css {
     @Test
@@ -29,7 +30,11 @@ public class css {
 //    ONLY By.cssSelector
     @Test
     void onlyCss() {
-        WebDriver driver = new ChromeDriver();
+//        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
+        options.addArguments("--window-size=1920,1080");
+        WebDriver driver = new ChromeDriver(options);
         driver.get("https://opencart.abstracta.us/index.php?route=common/home");
         System.out.println(driver.findElement(By.id("logo")).getText());
 //        driver.findElement(By.name("search")).sendKeys("abc");

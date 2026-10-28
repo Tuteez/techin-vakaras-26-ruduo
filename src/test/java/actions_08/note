@@ -1,0 +1,11 @@
+Actions - https://www.geeksforgeeks.org/software-testing/how-to-handle-action-class-in-selenium/
+Task1 - https://demoqa.com/buttons
+Task2 - Atidarom https://the-internet.herokuapp.com/context_menu
+        spaudziam right click
+        Asertinam kad atsirado alert
+chromeOptions - https://www.browserstack.com/guide/selenium-chrome-options
+
+        ChromeOptions options = new ChromeOptions(); - sukuriam
+        options.addArguments("--headless=new"); - padarom headless
+        options.addArguments("--window-size=1920,1080"); - nustatom dydi
+        WebDriver driver = new ChromeDriver(options); - paduoda optionus driveriui
